@@ -6,13 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import techtown.org.kotlintest.ListData
-import techtown.org.kotlintest.MyAdapter
-import techtown.org.kotlintest.MyDecoration
-import techtown.org.kotlintest.Recycle_Main
+import techtown.org.kotlintest.*
 import techtown.org.kotlintest.databinding.FragmentGridBinding
 
 class GridFragment: Fragment(){
@@ -21,7 +20,8 @@ class GridFragment: Fragment(){
     private lateinit var binding : FragmentGridBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
@@ -54,6 +54,19 @@ class GridFragment: Fragment(){
             }
 
         })*/
+
+        val requestLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()) {
+            it.data!!.getStringExtra("result")?.let {
+                datas?.add(ListData(it,it))
+                myAdapter.notifyDataSetChanged()
+            }
+        }
+
+        binding.addNewPlan.setOnClickListener{
+            val intent = Intent(context, AddActivity2::class.java)
+            requestLauncher.launch(intent)
+        }
 
         return binding.root
 

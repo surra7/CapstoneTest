@@ -12,17 +12,31 @@
         android:theme="@style/Theme.CapstoneTest"
         tools:targetApi="31">
         <activity
+            android:name=".AddNewPost"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Add_Country"
+            android:exported="false" />
+        <activity
+            android:name=".AddActivity2"
+            android:exported="false" />
+        <activity
             android:name=".AddActivity"
             android:exported="false"
-            android:parentActivityName=".Recycle_Main"/>
+            android:parentActivityName=".Recycle_Main" />
         <activity
             android:name=".Recycle_Main"
             android:exported="false"
             android:parentActivityName=".MainActivity">
-            <!--<meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>-->
+
+            <!--
+                <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+            -->
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

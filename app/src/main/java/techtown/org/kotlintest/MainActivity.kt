@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         val view = binding.root
         setContentView(view)
 
+        var homeFragment = HomeFragment()
+        supportFragmentManager.beginTransaction().add(R.id.main_content, homeFragment).commit()
+
         binding.bottomNavigation.setOnNavigationItemSelectedListener(this)
     }
 
