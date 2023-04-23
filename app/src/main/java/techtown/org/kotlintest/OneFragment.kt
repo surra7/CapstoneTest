@@ -8,7 +8,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import techtown.org.kotlintest.databinding.FragmentGridBinding
 import techtown.org.kotlintest.databinding.FragmentOneBinding
 
 

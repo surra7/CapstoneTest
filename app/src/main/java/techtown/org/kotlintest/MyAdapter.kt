@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
-import techtown.org.kotlintest.fragment.GridFragment
+import techtown.org.kotlintest.fragment.MyTravelFragment
 
 class MyAdapter1(private val context: OneFragment) : RecyclerView.Adapter<MyAdapter1.ViewHolder>() {
 
@@ -49,7 +49,7 @@ class MyAdapter1(private val context: OneFragment) : RecyclerView.Adapter<MyAdap
     }
 }
 
-class MyAdapter(private val context: GridFragment) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(private val context: MyTravelFragment) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     var datas = mutableListOf<ListData>()
 /*(val datas: MutableList<String>?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){*/

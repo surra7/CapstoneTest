@@ -8,16 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import techtown.org.kotlintest.*
-import techtown.org.kotlintest.databinding.FragmentGridBinding
+import techtown.org.kotlintest.databinding.FragmentMyTravelBinding
 
-class GridFragment: Fragment(){
+class MyTravelFragment: Fragment(){
     lateinit var myAdapter: MyAdapter
     val datas = mutableListOf<ListData>()
-    private lateinit var binding : FragmentGridBinding
+    private lateinit var binding : FragmentMyTravelBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +24,7 @@ class GridFragment: Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = FragmentGridBinding.inflate(inflater, container, false)
+        val binding = FragmentMyTravelBinding.inflate(inflater, container, false)
 
         val layoutManager = LinearLayoutManager(activity)
         binding.gridRecycle.layoutManager=layoutManager
@@ -55,18 +54,23 @@ class GridFragment: Fragment(){
 
         })*/
 
-        val requestLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        /*val requestLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) {
-            it.data!!.getStringExtra("result")?.let {
+            *//*it.data!!.getStringExtra("result")?.let {
                 datas?.add(ListData(it,it))
                 myAdapter.notifyDataSetChanged()
-            }
+            }*//*
         }
 
         binding.addNewPlan.setOnClickListener{
             val intent = Intent(context, AddActivity2::class.java)
             requestLauncher.launch(intent)
-        }
+        }*/
+
+        binding.addNewPlan.setOnClickListener(({
+            val intent = Intent(context, AddActivity2::class.java)
+            startActivity(intent)
+        }))
 
         return binding.root
 

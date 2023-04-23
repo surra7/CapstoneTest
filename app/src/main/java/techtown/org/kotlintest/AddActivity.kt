@@ -40,6 +40,12 @@ class AddActivity : AppCompatActivity() {
             finish()
             true
         }
+        android.R.id.home -> {
+            val intent = intent
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+            true
+        }
         else -> true
     }
 }

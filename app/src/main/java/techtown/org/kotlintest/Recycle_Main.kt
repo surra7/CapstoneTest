@@ -1,9 +1,11 @@
 package techtown.org.kotlintest
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -108,6 +110,19 @@ class Recycle_Main : AppCompatActivity() //BottomNavigationView.OnNavigationItem
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putStringArrayList("datas", ArrayList(datas))
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = intent
+                setResult(Activity.RESULT_OK, intent)
+                finish()
+                return true
+            }
+            else -> {}
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {

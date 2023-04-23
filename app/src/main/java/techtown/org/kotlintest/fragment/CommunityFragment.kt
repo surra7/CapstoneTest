@@ -8,14 +8,10 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import techtown.org.kotlintest.AddActivity2
-import techtown.org.kotlintest.AddNewPost
-import techtown.org.kotlintest.ListData
-import techtown.org.kotlintest.R
+import techtown.org.kotlintest.*
 import techtown.org.kotlintest.databinding.ActivityMainBinding
 import techtown.org.kotlintest.databinding.FragmentAddNewPostBinding
 import techtown.org.kotlintest.databinding.FragmentCommunityBinding
-import techtown.org.kotlintest.databinding.FragmentGridBinding
 
 class CommunityFragment: Fragment(){
     override fun onCreateView(
@@ -25,7 +21,7 @@ class CommunityFragment: Fragment(){
     ): View? {
         val binding = FragmentCommunityBinding.inflate(inflater, container, false)
 
-        val requestLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        /*val requestLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) {
             it.data!!.getStringExtra("result")?.let {
             }
@@ -34,7 +30,12 @@ class CommunityFragment: Fragment(){
         binding.addNewPost.setOnClickListener{
             val intent = Intent(context, AddNewPost::class.java)
             requestLauncher.launch(intent)
-        }
+        }*/
+
+        binding.addNewPost.setOnClickListener(({
+            val intent = Intent(context, AddNewPost::class.java)
+            startActivity(intent)
+        }))
 
         return binding.root
     }
