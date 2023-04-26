@@ -1,4 +1,4 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.myTravel
 
 import java.io.Serializable
 

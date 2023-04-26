@@ -1,4 +1,4 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.myTravel
 
 import android.app.Activity
 import android.content.Intent
@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
+import techtown.org.kotlintest.*
 import techtown.org.kotlintest.databinding.ActivityRecycleMainBinding
 
 class Recycle_Main : AppCompatActivity() //BottomNavigationView.OnNavigationItemSelectedListener
@@ -146,30 +147,4 @@ class Recycle_Main : AppCompatActivity() //BottomNavigationView.OnNavigationItem
         return true
     }*/
 
-
-    /*override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.action_home -> {
-                var detailViewFragment = DetailViewFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.drawer,detailViewFragment).commit()
-                return true
-            }
-            R.id.action_my_travel -> {
-                var gridFragment = GridFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.drawer,gridFragment).commit()
-                return true
-            }
-            R.id.action_community -> {
-                var alarmFragment = alarmFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.drawer,alarmFragment).commit()
-                return true
-            }
-            R.id.action_account -> {
-                var userFragment = UserFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.drawer,userFragment).commit()
-                return true
-            }
-        }
-        return false
-    }*/
 }

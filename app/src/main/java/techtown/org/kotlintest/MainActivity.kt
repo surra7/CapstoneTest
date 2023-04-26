@@ -2,6 +2,9 @@ package techtown.org.kotlintest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import techtown.org.kotlintest.databinding.ActivityMainBinding
 import techtown.org.kotlintest.fragment.*
 

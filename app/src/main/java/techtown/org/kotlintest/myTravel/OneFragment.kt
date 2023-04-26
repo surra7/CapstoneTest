@@ -1,13 +1,12 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.myTravel
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import techtown.org.kotlintest.MyAdapter1
+import techtown.org.kotlintest.MyDecoration
 import techtown.org.kotlintest.databinding.FragmentOneBinding
 
 

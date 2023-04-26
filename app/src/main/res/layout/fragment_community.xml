@@ -177,7 +177,7 @@ beers are better."
                                 android:layout_marginEnd="2dp"
                                 android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/ic_heart2" />
+                                android:src="@drawable/ic_like_after" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -217,7 +217,7 @@ beers are better."
                                 android:layout_marginEnd="2dp"
                                 android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/ic_bookmark2" />
+                                android:src="@drawable/ic_save_after" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -328,7 +328,7 @@ It would be better	if we can have beer or so."
                                 android:layout_marginEnd="2dp"
                                 android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/ic_heart" />
+                                android:src="@drawable/ic_like_before" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -368,7 +368,7 @@ It would be better	if we can have beer or so."
                                 android:layout_marginEnd="2dp"
                                 android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/ic_bookmark2" />
+                                android:src="@drawable/ic_save_after" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -418,7 +418,7 @@ It would be better	if we can have beer or so."
                             <ImageView
                                 android:layout_width="56dp"
                                 android:layout_height="56dp"
-                                android:src="@drawable/ic_profile_awpelf12" />
+                                android:src="@drawable/ic_profile_empty" />
 
                             <TextView
                                 android:id="@+id/userName_3"
@@ -479,7 +479,7 @@ but can go anywhere if we go by walk."
                                 android:layout_marginEnd="2dp"
                                 android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/ic_heart" />
+                                android:src="@drawable/ic_like_before" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -519,7 +519,7 @@ but can go anywhere if we go by walk."
                                 android:layout_marginEnd="2dp"
                                 android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
-                                android:src="@drawable/ic_bookmark" />
+                                android:src="@drawable/ic_save_before" />
 
                             <TextView
                                 android:layout_width="wrap_content"

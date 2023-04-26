@@ -1,33 +1,31 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.account
 
 import android.app.Activity
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import techtown.org.kotlintest.databinding.ActivityAdd2Binding
-import techtown.org.kotlintest.databinding.ActivityAddCountryBinding
-import techtown.org.kotlintest.databinding.ActivityAddNewPostBinding
+import android.os.Bundle
+import android.view.MenuItem
+import techtown.org.kotlintest.R
+import techtown.org.kotlintest.databinding.ActivityLikedBinding
+import techtown.org.kotlintest.databinding.ActivityMyPostsBinding
 
-class AddNewPost : AppCompatActivity() {
-    lateinit var binding: ActivityAddNewPostBinding
+class LikedActivity : AppCompatActivity() {
+    lateinit var binding: ActivityLikedBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddNewPostBinding.inflate(layoutInflater)
+        binding = ActivityLikedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.topBar)
         //툴바에 타이틀 없애기
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        binding.topBar.title = "Liked Posts"
         /*toggle = ActionBarDrawerToggle(this, binding.btnSave, R.string.drawer_opened,
             R.string.drawer_closed
         )*/
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {

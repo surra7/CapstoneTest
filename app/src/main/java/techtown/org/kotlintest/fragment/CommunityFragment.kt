@@ -9,8 +9,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import techtown.org.kotlintest.*
-import techtown.org.kotlintest.databinding.ActivityMainBinding
-import techtown.org.kotlintest.databinding.FragmentAddNewPostBinding
 import techtown.org.kotlintest.databinding.FragmentCommunityBinding
 
 class CommunityFragment: Fragment(){

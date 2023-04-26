@@ -1,10 +1,11 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.myTravel
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import techtown.org.kotlintest.R
 
 
 /**

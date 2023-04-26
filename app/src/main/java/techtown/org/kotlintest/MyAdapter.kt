@@ -12,6 +12,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import techtown.org.kotlintest.fragment.MyTravelFragment
+import techtown.org.kotlintest.myTravel.OneFragment
+import techtown.org.kotlintest.myTravel.Recycle_Main
+import techtown.org.kotlintest.myTravel.ScheduleData
 
 class MyAdapter1(private val context: OneFragment) : RecyclerView.Adapter<MyAdapter1.ViewHolder>() {
 

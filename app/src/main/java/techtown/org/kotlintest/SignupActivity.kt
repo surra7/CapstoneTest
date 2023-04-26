@@ -1,23 +1,18 @@
 package techtown.org.kotlintest
 
 import android.app.Activity
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import techtown.org.kotlintest.databinding.ActivityAdd2Binding
-import techtown.org.kotlintest.databinding.ActivityAddCountryBinding
-import techtown.org.kotlintest.databinding.ActivityAddNewPostBinding
+import android.os.Bundle
+import android.view.MenuItem
+import techtown.org.kotlintest.databinding.ActivityFriendsBinding
+import techtown.org.kotlintest.databinding.ActivitySignupBinding
 
-class AddNewPost : AppCompatActivity() {
-    lateinit var binding: ActivityAddNewPostBinding
+class SignupActivity : AppCompatActivity() {
+    lateinit var binding: ActivitySignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddNewPostBinding.inflate(layoutInflater)
+        binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.topBar)
@@ -30,6 +25,12 @@ class AddNewPost : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.signup_button -> {
+                val intent = intent
+                setResult(Activity.RESULT_OK, intent)
+                finish()
+                return true
+            }
             android.R.id.home -> {
                 val intent = intent
                 setResult(Activity.RESULT_OK, intent)

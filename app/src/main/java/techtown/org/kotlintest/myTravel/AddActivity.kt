@@ -1,12 +1,11 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.myTravel
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.recyclerview.widget.LinearLayoutManager
+import techtown.org.kotlintest.R
 import techtown.org.kotlintest.databinding.ActivityAddBinding
 
 class AddActivity : AppCompatActivity() {

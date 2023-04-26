@@ -1,33 +1,32 @@
-package techtown.org.kotlintest
+package techtown.org.kotlintest.account
 
 import android.app.Activity
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import techtown.org.kotlintest.databinding.ActivityAdd2Binding
-import techtown.org.kotlintest.databinding.ActivityAddCountryBinding
-import techtown.org.kotlintest.databinding.ActivityAddNewPostBinding
+import android.os.Bundle
+import android.view.MenuItem
+import techtown.org.kotlintest.R
+import techtown.org.kotlintest.databinding.ActivityFriendsBinding
+import techtown.org.kotlintest.databinding.ActivityInformationBinding
 
-class AddNewPost : AppCompatActivity() {
-    lateinit var binding: ActivityAddNewPostBinding
+class FriendsActivity : AppCompatActivity() {
+    lateinit var binding: ActivityFriendsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddNewPostBinding.inflate(layoutInflater)
+        binding = ActivityFriendsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.topBar)
         //툴바에 타이틀 없애기
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        binding.topBar.title = "Friends"
         /*toggle = ActionBarDrawerToggle(this, binding.btnSave, R.string.drawer_opened,
             R.string.drawer_closed
         )*/
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
