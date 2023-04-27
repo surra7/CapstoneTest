@@ -1,12 +1,15 @@
 package techtown.org.kotlintest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import techtown.org.kotlintest.databinding.ActivityMainBinding
+import techtown.org.kotlintest.databinding.FragmentCommunityBinding
 import techtown.org.kotlintest.fragment.*
+import techtown.org.kotlintest.myTravel.TwoFragment
 
 /*
 class MainActivity : AppCompatActivity() {
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private val fragmentManager = supportFragmentManager
     private lateinit var binding : ActivityMainBinding
+    private lateinit var binding2 : FragmentCommunityBinding
 
     private var homeFragment: HomeFragment? = null
     private var myTravelFragment: MyTravelFragment? = null
@@ -41,6 +45,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        /*binding2 = FragmentCommunityBinding.inflate(layoutInflater)
+
+        binding2.addNewPost.setOnClickListener(({
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_content, TwoFragment())
+                .commit()
+        }))*/
 
         initBottomNavigation()
     }

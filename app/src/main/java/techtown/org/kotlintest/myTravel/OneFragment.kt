@@ -1,6 +1,7 @@
 package techtown.org.kotlintest.myTravel
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -38,6 +39,11 @@ class OneFragment : Fragment(){
 
             myAdapter.datas = datas
             myAdapter.notifyDataSetChanged()
+        }
+
+        binding.fab.setOnClickListener{
+            val intent = Intent(context, AddActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root

@@ -21,16 +21,17 @@ class MyAdapter1(private val context: OneFragment) : RecyclerView.Adapter<MyAdap
     var datas = mutableListOf<ScheduleData>()
 /*(val datas: MutableList<String>?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){*/
 
-    override fun getItemCount(): Int{
+    override fun getItemCount(): Int {
         return datas?.size ?: 0
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_travelschedule,parent,false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_travelschedule, parent, false)
         return ViewHolder(view)
     }
-            /*RecyclerView.ViewHolder
-            = MyViewHolder(ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))*/
+    /*RecyclerView.ViewHolder
+    = MyViewHolder(ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))*/
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         /*val binding=(holder as MyViewHolder).binding
@@ -52,12 +53,13 @@ class MyAdapter1(private val context: OneFragment) : RecyclerView.Adapter<MyAdap
     }
 }
 
-class MyAdapter(private val context: MyTravelFragment) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(private val context: MyTravelFragment) :
+    RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     var datas = mutableListOf<ListData>()
 /*(val datas: MutableList<String>?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){*/
 
-    override fun getItemCount(): Int{
+    override fun getItemCount(): Int {
         return datas?.size ?: 0
     }
 
@@ -70,7 +72,8 @@ class MyAdapter(private val context: MyTravelFragment) : RecyclerView.Adapter<My
     }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview,parent,false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_upcoming_travel, parent, false)
         return ViewHolder(view)
     }
     /*RecyclerView.ViewHolder
@@ -81,7 +84,7 @@ class MyAdapter(private val context: MyTravelFragment) : RecyclerView.Adapter<My
         binding.itemData.text= datas!![position]*/
 
         holder.bind(datas!![position])
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, Recycle_Main::class.java)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
@@ -113,7 +116,48 @@ class MyAdapter(private val context: MyTravelFragment) : RecyclerView.Adapter<My
     }
 }
 
-class MyDecoration(val context: Context): RecyclerView.ItemDecoration() {
+class MyAdapter2(private val context: MyTravelFragment) :
+    RecyclerView.Adapter<MyAdapter2.ViewHolder>() {
+
+    var datas = mutableListOf<ListData>()
+/*(val datas: MutableList<String>?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){*/
+
+    override fun getItemCount(): Int {
+        return datas?.size ?: 0
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_past_travel, parent, false)
+        return ViewHolder(view)
+    }
+    /*RecyclerView.ViewHolder
+    = MyViewHolder(ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))*/
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        /*val binding=(holder as MyViewHolder).binding
+        binding.itemData.text= datas!![position]*/
+
+        holder.bind(datas!![position])
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, Recycle_Main::class.java)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
+    }
+
+    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+
+        private val txtName: TextView = itemView.findViewById(R.id.tv_tl_name)
+        private val txtPlace: TextView = itemView.findViewById(R.id.tv_tl_place)
+
+        fun bind(item: ListData) {
+            txtName.text = item.name
+            txtPlace.text = item.place
+        }
+    }
+}
+
+class MyDecoration(val context: Context) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(
         outRect: Rect,
@@ -124,7 +168,7 @@ class MyDecoration(val context: Context): RecyclerView.ItemDecoration() {
         super.getItemOffsets(outRect, view, parent, state)
         val index = parent.getChildAdapterPosition(view) + 1
 
-        outRect.set(10, 10, 10, 10)
+        outRect.set(10, 10, 10, 0)
 
         /*if (index % 3 == 0) //left, top, right, bottom
             outRect.set(10, 10, 10, 60)
@@ -132,6 +176,7 @@ class MyDecoration(val context: Context): RecyclerView.ItemDecoration() {
             outRect.set(10, 10, 10, 0)*/
 
         view.setBackgroundColor(Color.parseColor("#28A0FF"))
+        //음영 효과
         ViewCompat.setElevation(view, 20.0f)
 
     }

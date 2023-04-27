@@ -15,7 +15,9 @@ import techtown.org.kotlintest.databinding.FragmentMyTravelBinding
 
 class MyTravelFragment: Fragment(){
     lateinit var myAdapter: MyAdapter
+    lateinit var myAdapter2: MyAdapter2
     val datas = mutableListOf<ListData>()
+    val datas2 = mutableListOf<ListData>()
     private lateinit var binding : FragmentMyTravelBinding
 
     override fun onCreateView(
@@ -27,15 +29,18 @@ class MyTravelFragment: Fragment(){
         val binding = FragmentMyTravelBinding.inflate(inflater, container, false)
 
         val layoutManager = LinearLayoutManager(activity)
-        binding.gridRecycle.layoutManager=layoutManager
+        binding.upcomingRecycle.layoutManager=layoutManager
         myAdapter = MyAdapter(this)
-        binding.gridRecycle.adapter = myAdapter
-        binding.gridRecycle.addItemDecoration(MyDecoration(activity as Context))
+        binding.upcomingRecycle.adapter = myAdapter
+        binding.upcomingRecycle.addItemDecoration(MyDecoration(activity as Context))
+
+        val layoutManager2 = LinearLayoutManager(activity)
+        binding.upcomingRecycle.layoutManager=layoutManager2
+        myAdapter2 = MyAdapter2(this)
+        binding.pastRecycle.adapter = myAdapter2
+        binding.pastRecycle.addItemDecoration(MyDecoration(activity as Context))
 
         datas.apply {
-            add(ListData(name = "Osaka|Tokyo", place = "2023.03.24-03.28"))
-            add(ListData(name = "Otaru", place = "2023.02.14-02.17"))
-            add(ListData(name = "Nha Trang", place="2022.12.26-12.30"))
             add(ListData(name = "Fukuoka", place = "2022.10.05-10.08"))
             add(ListData(name = "Bangkok", place = "2022.06.21-06.25"))
             add(ListData(name = "Tokyo", place = "2022.01.05-01.10"))
@@ -43,6 +48,18 @@ class MyTravelFragment: Fragment(){
             myAdapter.datas = datas
             myAdapter.notifyDataSetChanged()
     }
+
+        datas2.apply {
+            add(ListData(name = "Osaka|Tokyo", place = "2023.03.24-03.28"))
+            add(ListData(name = "Otaru", place = "2023.02.14-02.17"))
+            add(ListData(name = "Nha Trang", place="2022.12.26-12.30"))
+            add(ListData(name = "Fukuoka", place = "2022.10.05-10.08"))
+            add(ListData(name = "Bangkok", place = "2022.06.21-06.25"))
+            add(ListData(name = "Tokyo", place = "2022.01.05-01.10"))
+
+            myAdapter2.datas = datas2
+            myAdapter2.notifyDataSetChanged()
+        }
 
         /*myAdapter.SetOnItemClickListener(object : MyAdapter.OnItemClickListener{
             override fun onItemClick(v: View, data: ListData, pos : Int) {

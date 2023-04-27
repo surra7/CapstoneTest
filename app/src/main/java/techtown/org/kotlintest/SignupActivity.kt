@@ -1,6 +1,7 @@
 package techtown.org.kotlintest
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -22,15 +23,20 @@ class SignupActivity : AppCompatActivity() {
             R.string.drawer_closed
         )*/
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.signupApplyBtn.setOnClickListener(({
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }))
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.signup_button -> {
+            /*R.id.signup_apply_btn -> {
                 val intent = intent
                 setResult(Activity.RESULT_OK, intent)
                 finish()
-                return true
-            }
+                true
+            }*/
             android.R.id.home -> {
                 val intent = intent
                 setResult(Activity.RESULT_OK, intent)

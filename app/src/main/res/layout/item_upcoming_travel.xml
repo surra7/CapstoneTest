@@ -23,17 +23,17 @@
         android:id="@+id/tv_tl_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="여행 장소"
+        android:text="여행 이름"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
         android:textSize="22sp"
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/tv_tl_time"
+        android:id="@+id/tv_tl_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="시간"
+        android:text="장소"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:textSize="18sp"

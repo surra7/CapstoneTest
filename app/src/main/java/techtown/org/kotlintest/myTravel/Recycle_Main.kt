@@ -72,11 +72,6 @@ class Recycle_Main : AppCompatActivity() //BottomNavigationView.OnNavigationItem
             }
         }
 
-        binding.fab.setOnClickListener{
-            val intent = Intent(this, AddActivity::class.java)
-            requestLauncher.launch(intent)
-        }
-
         //bundle로 넘어온 datas값이 null이 아니면 목록에 적용
         datas = savedInstanceState?.let {
             it.getStringArrayList("datas")?.toMutableList()
