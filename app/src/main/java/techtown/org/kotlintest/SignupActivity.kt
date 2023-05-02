@@ -31,12 +31,6 @@ class SignupActivity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            /*R.id.signup_apply_btn -> {
-                val intent = intent
-                setResult(Activity.RESULT_OK, intent)
-                finish()
-                true
-            }*/
             android.R.id.home -> {
                 val intent = intent
                 setResult(Activity.RESULT_OK, intent)
